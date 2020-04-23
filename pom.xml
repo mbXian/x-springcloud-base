@@ -4,9 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.xmb.common</groupId>
+        <artifactId>x-common</artifactId>
+        <version>1.0.4-SNAPSHOT</version>
+        <relativePath />
+    </parent>
+
     <groupId>com.xmb.springcloud</groupId>
     <artifactId>x-springcloud-base</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
 
@@ -17,11 +24,7 @@
 
     <dependencies>
 
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.2</version>
-        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -42,10 +45,6 @@
                 <scope>import</scope>
             </dependency>
 
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
