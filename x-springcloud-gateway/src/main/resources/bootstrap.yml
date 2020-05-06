@@ -8,6 +8,7 @@ spring:
   cloud:
     gateway:
       routes:
+        # workout
         - id: workout_route
           uri: lb://x-workout
           order: 0
@@ -15,88 +16,12 @@ spring:
             - Path=/workout/**
           filters:
             - StripPrefix=1
-      # 鉴权中心
+        # 鉴权中心
         - id: auth_route
-          uri: lb://tg-auth-center
+          uri: lb://x-auth-center
           order: 0
           predicates:
             - Path=/auth/**
-          filters:
-            - StripPrefix=1
-      # erp
-        - id: erp_route
-          uri: lb://erp-center
-          order: 0
-          predicates:
-            - Path=/erp/**
-          filters:
-            - StripPrefix=1
-            # crm
-        - id: crm_route
-          uri: lb://crm
-          order: 0
-          predicates:
-            - Path=/crm/**
-          filters:
-            - StripPrefix=1
-          # payment
-        - id: pay_route
-          uri: lb://payment-center
-          order: 0
-          predicates:
-            - Path=/pay/**
-          filters:
-            - StripPrefix=1
-          # pos
-        - id: pos_route
-          uri: lb://pos
-          order: 0
-          predicates:
-            - Path=/pos/**
-          filters:
-            - StripPrefix=1
-          # demo
-        - id: demo_route
-          uri: lb://demo-consumer
-          order: 0
-          predicates:
-            - Path=/demo/**
-          filters:
-            - StripPrefix=1
-
-          # booklend
-        - id: booklend_route
-          uri: lb://booklend
-          order: 0
-          predicates:
-            - Path=/booklend/**
-          filters:
-            - StripPrefix=1
-
-      # eshop
-        - id: eshop_route
-          uri: lb://eshop
-          order: 0
-          predicates:
-            - Path=/eshop/**
-          filters:
-            - StripPrefix=1
-
-      # 密室逃脱平台借用
-      # merchant
-        - id: merchant_route
-          uri: lb://merchant
-          order: 0
-          predicates:
-            - Path=/merchant/**
-          filters:
-            - StripPrefix=1
-          # manage
-        - id: manage_route
-          uri: lb://manage
-          order: 0
-          predicates:
-            - Path=/manage/**
           filters:
             - StripPrefix=1
 
