@@ -1,0 +1,17 @@
+version: '3'
+services:
+  x-eureka_1:
+    hostname: x-eureka_1
+    image: x-eureka_1:1.0
+    container_name: x-eureka_1
+    ports:
+      - 2101:2101
+
+  x-eureka_2:
+    hostname: x-eureka_2
+    image: x-eureka_2:1.0
+    container_name: x-eureka_2
+    ports:
+      - 2102:2102
+
+

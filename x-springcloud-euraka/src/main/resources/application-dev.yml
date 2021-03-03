@@ -1,0 +1,13 @@
+spring:
+  profiles: x-eureka_2
+server:
+  port: 2102
+eureka:
+  instance:
+    hostname: x-eureka_2
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://x-eureka_1:2101/eureka/
+    register-with-eureka: false
+    fetch-registry: true
