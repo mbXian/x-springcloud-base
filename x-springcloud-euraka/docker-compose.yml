@@ -1,17 +1,16 @@
-version: '3'
+version: "3"
 services:
-  x-eureka_1:
-    hostname: x-eureka_1
-    image: x-eureka_1:1.0
-    container_name: x-eureka_1
+  x-eureka-1:
+    hostname: "x-eureka-1"
+    image: "x-eureka-1:1.0"
+    container_name: x-eureka-1
     ports:
-      - 2101:2101
+      - "2101:2101"
 
-  x-eureka_2:
-    hostname: x-eureka_2
-    image: x-eureka_2:1.0
-    container_name: x-eureka_2
+  x-eureka-2:
+    hostname: "x-eureka-2"
+    image: "x-eureka-2:1.0"
+    container_name: x-eureka-2
     ports:
-      - 2102:2102
-
+      - "2102:2102"
 

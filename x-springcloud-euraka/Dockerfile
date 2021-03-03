@@ -10,4 +10,3 @@ ADD ./target/x-springcloud-euraka-1.0.0-SNAPSHOT.jar ./app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
 
-CMD ["--spring.profiles.active=dev"]
