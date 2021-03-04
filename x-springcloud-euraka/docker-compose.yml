@@ -2,14 +2,14 @@ version: "3"
 services:
   x-eureka:
     hostname: "x-eureka"
-    image: "x-eureka:1.0"
+    image: "registry.cn-guangzhou.aliyuncs.com/ben_xian/my_project/x-eureka:1.0"
     container_name: x-eureka
     ports:
       - "2100:2100"
 
   x-workout:
     hostname: "x-workout"
-    image: "x-workout:1.0"
+    image: "registry.cn-guangzhou.aliyuncs.com/ben_xian/my_project/x-workout:1.0"
     restart: on-failure
     container_name: x-workout
     ports:
