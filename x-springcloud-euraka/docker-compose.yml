@@ -1,18 +1,11 @@
 version: "3"
 services:
-  x-eureka-1:
-    hostname: "x-eureka-1"
-    image: "x-eureka-1:1.0"
-    container_name: x-eureka-1
+  x-eureka:
+    hostname: "x-eureka"
+    image: "x-eureka:1.0"
+    container_name: x-eureka
     ports:
-      - "2101:2101"
-
-  x-eureka-2:
-    hostname: "x-eureka-2"
-    image: "x-eureka-2:1.0"
-    container_name: x-eureka-2
-    ports:
-      - "2102:2102"
+      - "2100:2100"
 
   x-workout:
     hostname: "x-workout"
@@ -22,11 +15,11 @@ services:
     ports:
       - "8091:8091"
     depends_on:
-      - "x-eureka-1"
+      - "x-eureka"
       - "x-mysql"
       - "x-redis"
     volumes:
-      - "/Users/xian/Documents/docker/volume/x-workout:/home/workspace/x-workout"
+      - "/Users/xian/Documents/docker/volume/x-workout:/home/logs"
 
   x-mysql:
     container_name: "x-mysql"                                                    # 指定容器的名称
