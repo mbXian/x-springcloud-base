@@ -25,7 +25,7 @@ services:
     container_name: "x-mysql"                                                    # 指定容器的名称
     image: "mysql:5.7"                                                           # 指定镜像和版本
     ports:
-      - "13306:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "xmb123456"
       MYSQL_ROOT_HOST: "%"
@@ -37,7 +37,7 @@ services:
     image: redis:latest
     container_name: "x-redis"
     ports:
-      - 16379:6379
+      - 6379:6379
     volumes:
       - /Users/xian/Documents/docker/volume/redis/redis.conf:/etc/redis/redis.conf:rw
       - /Users/xian/Documents/docker/volume/redis/redis-data/:/data:rw
