@@ -31,7 +31,7 @@ services:
       MYSQL_ROOT_HOST: "%"
     volumes:
       - "/home/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
-      - "/home/docker/volume/mysql/conf:/etc/mysql/conf.d"       # 挂载配置文件目录
+      - "/home/docker/volume/mysql/conf:/etc/mysql"              # 挂载配置文件目录
 
   x-redis:
     image: redis:latest
