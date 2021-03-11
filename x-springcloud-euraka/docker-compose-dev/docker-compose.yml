@@ -1,0 +1,46 @@
+version: "3"
+services:
+  x-eureka:
+    hostname: "x-eureka"
+    image: "registry.cn-guangzhou.aliyuncs.com/ben_xian/x-eureka:1.0"
+    container_name: x-eureka
+    ports:
+      - "2100:2100"
+
+  x-workout:
+    hostname: "x-workout"
+    image: "registry.cn-guangzhou.aliyuncs.com/ben_xian/x-workout:1.0"
+    restart: on-failure
+    container_name: x-workout
+    ports:
+      - "8091:8091"
+    depends_on:
+      - "x-eureka"
+      - "x-mysql"
+      - "x-redis"
+    volumes:
+      - "/Users/xian/Documents/docker/volume/x-workout:/home/logs"
+
+  x-mysql:
+    container_name: "x-mysql"                                                    # 指定容器的名称
+    image: "mysql:5.7"                                                           # 指定镜像和版本
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "xmb123456"
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - "/Users/xian/Documents/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
+      - "/Users/xian/Documents/docker/volume/mysql/conf:/etc/mysql/conf.d"       # 挂载配置文件目录
+
+  x-redis:
+    image: redis:latest
+    container_name: "x-redis"
+    ports:
+      - 6379:6379
+    volumes:
+      - "/Users/xian/Documents/docker/volume/redis/redis.conf:/etc/redis/redis.conf:rw"
+      - "/Users/xian/Documents/docker/volume/redis/redis-data/:/data:rw"
+    command:
+      # 执行的命令
+      redis-server /etc/redis/redis.conf --appendonly yes

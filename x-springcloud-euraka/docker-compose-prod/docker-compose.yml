@@ -19,7 +19,7 @@ services:
       - "x-mysql"
       - "x-redis"
     volumes:
-      - "/Users/xian/Documents/docker/volume/x-workout:/home/logs"
+      - "/home/docker/volume/x-workout:/home/docker/volume/x-workout/logs"
 
   x-mysql:
     container_name: "x-mysql"                                                    # 指定容器的名称
@@ -30,8 +30,8 @@ services:
       MYSQL_ROOT_PASSWORD: "xmb123456"
       MYSQL_ROOT_HOST: "%"
     volumes:
-      - "/Users/xian/Documents/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
-      - "/Users/xian/Documents/docker/volume/mysql/conf:/etc/mysql/conf.d"       # 挂载配置文件目录
+      - "/home/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
+      - "/home/docker/volume/mysql/conf:/etc/mysql/conf.d"       # 挂载配置文件目录
 
   x-redis:
     image: redis:latest
@@ -39,8 +39,8 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - /Users/xian/Documents/docker/volume/redis/redis.conf:/etc/redis/redis.conf:rw
-      - /Users/xian/Documents/docker/volume/redis/redis-data/:/data:rw
+      - "/home/docker/volume/redis/redis.conf:/etc/redis/redis.conf:rw"
+      - "/home/docker/volume/redis/redis-data/:/data:rw"
     command:
       # 执行的命令
       redis-server /etc/redis/redis.conf --appendonly yes
