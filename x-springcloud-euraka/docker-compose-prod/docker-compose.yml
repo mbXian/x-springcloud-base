@@ -19,7 +19,7 @@ services:
       - "x-mysql"
       - "x-redis"
     volumes:
-      - "/home/docker/volume/x-workout:/home/docker/volume/x-workout/logs"
+      - "/home/docker/volume/x-workout:/home/logs"
 
   x-mysql:
     container_name: "x-mysql"                                                    # 指定容器的名称
