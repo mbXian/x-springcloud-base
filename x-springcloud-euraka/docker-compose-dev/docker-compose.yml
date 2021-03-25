@@ -29,7 +29,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "xmb123456"
       MYSQL_ROOT_HOST: "%"
-      SET_CONTAINER_TIMEZONE: true
+      SET_CONTAINER_TIMEZONE: 'true'
       CONTAINER_TIMEZONE: 'Asia/Shanghai'
     volumes:
       - "/Users/xian/Documents/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
