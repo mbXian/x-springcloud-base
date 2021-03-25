@@ -29,6 +29,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "xmb123456"
       MYSQL_ROOT_HOST: "%"
+      SET_CONTAINER_TIMEZONE: true
+      CONTAINER_TIMEZONE: 'Asia/Shanghai'
     volumes:
       - "/home/docker/volume/mysql/data:/var/lib/mysql"          # 挂载数据目录
       - "/home/docker/volume/mysql/conf:/etc/mysql"              # 挂载配置文件目录
